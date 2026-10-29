@@ -109,10 +109,24 @@ export default function App() {
     showToast('Requesting exact GPS coordinates from device...');
 
     navigator.geolocation.getCurrentPosition(
-      (pos) => {
+      async (pos) => {
         const exactLat = Math.round(pos.coords.latitude * 10000) / 10000;
         const exactLon = Math.round(pos.coords.longitude * 10000) / 10000;
-        const locationLabel = `GPS: ${exactLat.toFixed(4)}°N, ${exactLon.toFixed(4)}°E`;
+
+        // Reverse geocoding to get city name from coordinates
+        let locationLabel = `GPS: ${exactLat.toFixed(4)}°N, ${exactLon.toFixed(4)}°E`;
+        try {
+          const response = await fetch(
+            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${exactLat}&lon=${exactLon}&zoom=10`
+          );
+          const data = await response.json();
+          if (data && data.address) {
+            const city = data.address.city || data.address.town || data.address.village || data.address.county || data.address.state || 'Unknown Location';
+            locationLabel = city;
+          }
+        } catch (error) {
+          console.warn('Reverse geocoding failed:', error);
+        }
 
         const updatedProfile: WorkerProfile = {
           ...profile,
@@ -126,8 +140,8 @@ export default function App() {
         setIsDetectingGPS(false);
 
         // Immediately fetch real weather from Open-Meteo using exact GPS coordinates
-        loadWeather(exactLat, exactLon, `GPS (${exactLat}, ${exactLon})`);
-        showToast(`Exact GPS located! Live meteorological feed refreshed.`);
+        loadWeather(exactLat, exactLon, locationLabel);
+        showToast(`Located: ${locationLabel}. Live meteorological feed refreshed.`);
       },
       (err) => {
         console.warn('Geolocation permission error:', err);

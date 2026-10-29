@@ -56,13 +56,31 @@ export const WorkerProfileModal: React.FC<WorkerProfileModalProps> = ({
     }
   };
 
-  const handleUseGPS = () => {
+  const handleUseGPS = async () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          setLat(Math.round(pos.coords.latitude * 10000) / 10000);
-          setLon(Math.round(pos.coords.longitude * 10000) / 10000);
-          setLocationName(`GPS Location (${Math.round(pos.coords.latitude * 100) / 100}, ${Math.round(pos.coords.longitude * 100) / 100})`);
+        async (pos) => {
+          const exactLat = Math.round(pos.coords.latitude * 10000) / 10000;
+          const exactLon = Math.round(pos.coords.longitude * 10000) / 10000;
+          setLat(exactLat);
+          setLon(exactLon);
+
+          // Reverse geocoding to get city name from coordinates
+          let locationLabel = `GPS Location (${Math.round(pos.coords.latitude * 100) / 100}, ${Math.round(pos.coords.longitude * 100) / 100})`;
+          try {
+            const response = await fetch(
+              `https://nominatim.openstreetmap.org/reverse?format=json&lat=${exactLat}&lon=${exactLon}&zoom=10`
+            );
+            const data = await response.json();
+            if (data && data.address) {
+              const city = data.address.city || data.address.town || data.address.village || data.address.county || data.address.state || 'Unknown Location';
+              locationLabel = city;
+            }
+          } catch (error) {
+            console.warn('Reverse geocoding failed:', error);
+          }
+
+          setLocationName(locationLabel);
         },
         (err) => {
           console.warn('Geolocation error:', err);

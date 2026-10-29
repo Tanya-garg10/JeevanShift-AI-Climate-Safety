@@ -77,7 +77,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
           <div className="lg:col-span-5 relative min-h-[300px] lg:min-h-full">
             <div className="absolute inset-0 bg-stone-900">
               <img
-                src="/src/assets/images/hero_worker_cooling_1793276737920.jpg"
+                src="/hero_worker_cooling_1793276737920.jpg"
                 alt="Outdoor street vendor and delivery worker resting in shade with cool water"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center opacity-90 hover:opacity-100 transition-opacity"
