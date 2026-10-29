@@ -1,0 +1,6 @@
+{
+  "name": "JeevanShift",
+  "description": "AI-powered climate safety and livelihood protection platform for outdoor workers facing extreme heat.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
