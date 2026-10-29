@@ -1,6 +1,11 @@
 # JeevanShift — AI-Powered Climate Safety & Livelihood Protection
 
-> **Tagline:** Shift the Hours. Protect the Livelihood.  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-6.0-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+
+> **Tagline:** Shift the Hours. Protect the Livelihood.
 
 JeevanShift is an intelligent climate resilience and livelihood protection platform built for outdoor workers (street vendors, delivery riders, daily wage construction workers, and logistics laborers) facing extreme heatwaves across Indian urban centers.
 
@@ -99,3 +104,62 @@ npm run preview
 6. **HeatSOS:** Review the Heat Stroke vs Heat Exhaustion comparison and inspect the one-click WhatsApp/SMS emergency dispatch template.
 7. **Coordinator Portal:** Switch to the coordinator view to see the aggregated fleet matrix and use the **"Add New Support Point"** modal.
 8. **Toggle Language:** Click the **"हिन्दी"** button in the top navigation to experience full vernacular translation.
+
+---
+
+## ✨ Key Features
+
+- **Real-time Heat Risk Assessment**: Live meteorological data integration with Open-Meteo API for accurate heat index calculations
+- **Smart Shift Planning**: AI-powered schedule optimization to avoid dangerous midday heat exposure
+- **Interactive Support Maps**: Find nearby cooling centers, water stations, and medical facilities using Leaflet maps
+- **Emergency SOS System**: One-tap emergency calls and pre-formatted emergency messages with GPS coordinates
+- **Income Protection Calculator**: Quantify and recover potential income loss due to heat-related work restrictions
+- **Bilingual Interface**: Complete English and Hindi language support
+- **Employer Dashboard**: Fleet management and community support point coordination
+- **Offline Fallback**: Resilient demo mode when network connectivity is unavailable
+
+---
+
+## 📸 Screenshots
+
+*(Add screenshots of the application here)*
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Development Guidelines
+
+- Follow the existing code style and conventions
+- Write meaningful commit messages
+- Test your changes thoroughly
+- Update documentation as needed
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📧 Contact
+
+For questions, feedback, or collaboration opportunities, please reach out through the repository issues or contact the maintainers.
+
+---
+
+## 🙏 Acknowledgments
+
+- Open-Meteo API for weather data
+- Leaflet and OpenStreetMap for mapping services
+- React and Vite communities for excellent tooling
+- All contributors who help make JeevanShift better
