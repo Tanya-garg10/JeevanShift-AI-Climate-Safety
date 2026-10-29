@@ -11,8 +11,6 @@ JeevanShift is an intelligent climate resilience and livelihood protection platf
 
 Instead of issuing blanket stay-at-home advisories that force informal workers into zero-income days, JeevanShift combines live meteorological heat-index modeling with worker exposure context to generate safer split-shift schedules, locate nearby cooling and hydration infrastructure, provide immediate emergency assistance, and calculate protected income recovery.
 
----
-
 ## 🌟 Core Modules & Architecture
 
 1. **Overview / Landing Page**
@@ -55,8 +53,6 @@ Instead of issuing blanket stay-at-home advisories that force informal workers i
 8. **Bilingual Support (English & हिन्दी)**
    - Complete localization across all navigation, guidance, clinical terms, and forms, stored in `localStorage`.
 
----
-
 ## 🚀 Quick Local Setup Instructions
 
 ### Prerequisites
@@ -80,8 +76,6 @@ npm run build
 npm run preview
 ```
 
----
-
 ## 🛠️ Technology Stack
 
 - **Frontend:** React 19 + TypeScript + Vite
@@ -91,21 +85,6 @@ npm run preview
 - **Mapping:** Leaflet + OpenStreetMap tiles
 - **Weather Integration:** Open-Meteo REST API (free, zero API key required, reliable worldwide coverage)
 - **State & Storage:** LocalStorage for profile, language, and support points persistence
-
----
-
-## 🧭 Suggested 2–3 Minute Jury Demo Flow
-
-1. **Landing Page:** Open the home page, inspect the vision, and click **"Check Today's Heat Risk"**.
-2. **HeatRisk Dashboard:** Switch between city presets (e.g., Delhi NCR, Ahmedabad, Jaipur) to observe live temperatures, apparent heat index (feels like 44°C+), and the 24-hour heat wave chart.
-3. **SmartShift Planner:** Adjust available hours or target duration, click **"Generate My Work Plan"**, and inspect the visual 24-hour timeline avoiding the midday danger zone.
-4. **EarnSafe Planner:** Slide expected earnings and adjusted hours to demonstrate how shifting 3 hours to the evening recovers over 85% of potential lost income.
-5. **JeevanPoints:** Filter by Drinking Water (💧) or Air-Cooled Centers (❄️), click on a marker on the Leaflet map to inspect operating hours, and test "Report Outdated Info".
-6. **HeatSOS:** Review the Heat Stroke vs Heat Exhaustion comparison and inspect the one-click WhatsApp/SMS emergency dispatch template.
-7. **Coordinator Portal:** Switch to the coordinator view to see the aggregated fleet matrix and use the **"Add New Support Point"** modal.
-8. **Toggle Language:** Click the **"हिन्दी"** button in the top navigation to experience full vernacular translation.
-
----
 
 ## ✨ Key Features
 
@@ -118,14 +97,6 @@ npm run preview
 - **Employer Dashboard**: Fleet management and community support point coordination
 - **Offline Fallback**: Resilient demo mode when network connectivity is unavailable
 
----
-
-## 📸 Screenshots
-
-*(Add screenshots of the application here)*
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
@@ -136,26 +107,13 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-### Development Guidelines
-
-- Follow the existing code style and conventions
-- Write meaningful commit messages
-- Test your changes thoroughly
-- Update documentation as needed
-
----
-
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
 ## 📧 Contact
 
 For questions, feedback, or collaboration opportunities, please reach out through the repository issues or contact the maintainers.
-
----
 
 ## 🙏 Acknowledgments
 
