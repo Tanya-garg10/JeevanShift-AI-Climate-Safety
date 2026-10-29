@@ -76,6 +76,83 @@ npm run build
 npm run preview
 ```
 
+## 🌐 Deployment
+
+### Option 1: Vercel (Recommended)
+
+1. **Install Vercel CLI** (optional):
+```bash
+npm install -g vercel
+```
+
+2. **Deploy**:
+```bash
+vercel
+```
+
+3. **Follow the prompts** to configure your project
+4. Your app will be live at `https://your-project.vercel.app`
+
+### Option 2: Netlify
+
+1. **Build the project**:
+```bash
+npm run build
+```
+
+2. **Deploy to Netlify**:
+- Drag and drop the `dist` folder to Netlify dashboard
+- Or use Netlify CLI:
+```bash
+npm install -g netlify-cli
+netlify deploy --prod --dir=dist
+```
+
+### Option 3: GitHub Pages
+
+1. **Install gh-pages**:
+```bash
+npm install --save-dev gh-pages
+```
+
+2. **Add deploy script to package.json**:
+```json
+"scripts": {
+  "deploy": "gh-pages -d dist",
+  "predeploy": "npm run build"
+}
+```
+
+3. **Deploy**:
+```bash
+npm run deploy
+```
+
+### Option 4: Cloudflare Pages
+
+1. **Build the project**:
+```bash
+npm run build
+```
+
+2. **Deploy via Cloudflare dashboard**:
+- Connect your GitHub repository
+- Set build command: `npm run build`
+- Set output directory: `dist`
+
+### Environment Variables
+
+For production deployment, configure these environment variables:
+
+- `FEATHERLESS_API_KEY`: Your Featherless API key (required for AI features)
+- `APP_URL`: Your deployed application URL
+
+### Notes
+
+- The app uses client-side geolocation, so ensure HTTPS is enabled in production
+- Open-Meteo API requires no API key and works worldwide
+- LocalStorage is used for data persistence (no backend required)
+
 ## 🛠️ Technology Stack
 
 - **Frontend:** React 19 + TypeScript + Vite
